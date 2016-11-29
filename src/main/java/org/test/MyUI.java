@@ -30,6 +30,7 @@ public class MyUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+    	// git commit test
         VerticalLayout layout = new VerticalLayout();
         m_filter.setInputPrompt("filter by name...");
         m_filter.addTextChangeListener(e -> {
@@ -37,15 +38,15 @@ public class MyUI extends UI {
                     m_customerService.findAll(e.getText())));
         });
 
-        Button clearFilterButton = new Button(FontAwesome.TIMES);
-        clearFilterButton.addClickListener(e -> {
+        Button clearBtn = new Button(FontAwesome.TIMES);
+        clearBtn.addClickListener(e -> {
             m_filter.clear();
             updateGridList();
         });
 
         CssLayout cssHLayout = new CssLayout();
         cssHLayout.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
-        cssHLayout.addComponents(m_filter, clearFilterButton);
+        cssHLayout.addComponents(m_filter, clearBtn);
 
         m_grid.setColumns("firstName", "lastName", "birthDate", "status", "email");
         layout.addComponents(cssHLayout, m_grid);
