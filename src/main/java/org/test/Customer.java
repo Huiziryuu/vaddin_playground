@@ -8,7 +8,8 @@ import java.util.Date;
  * application this could for example be a JPA entity.
  */
 @SuppressWarnings("serial")
-public class Customer implements Serializable, Cloneable {
+public class Customer implements Serializable, Cloneable
+{
 
 	private Long id;
 
@@ -22,11 +23,13 @@ public class Customer implements Serializable, Cloneable {
 
 	private String email = "";
 
-	public Long getId() {
+	public Long getId()
+	{
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Long id)
+	{
 		this.id = id;
 	}
 
@@ -35,7 +38,8 @@ public class Customer implements Serializable, Cloneable {
 	 *
 	 * @return the value of email
 	 */
-	public String getEmail() {
+	public String getEmail()
+	{
 		return email;
 	}
 
@@ -45,7 +49,8 @@ public class Customer implements Serializable, Cloneable {
 	 * @param email
 	 *            new value of email
 	 */
-	public void setEmail(String email) {
+	public void setEmail(String email)
+	{
 		this.email = email;
 	}
 
@@ -54,7 +59,8 @@ public class Customer implements Serializable, Cloneable {
 	 *
 	 * @return the value of status
 	 */
-	public CustomerStatus getStatus() {
+	public CustomerStatus getStatus()
+	{
 		return status;
 	}
 
@@ -64,7 +70,8 @@ public class Customer implements Serializable, Cloneable {
 	 * @param status
 	 *            new value of status
 	 */
-	public void setStatus(CustomerStatus status) {
+	public void setStatus(CustomerStatus status)
+	{
 		this.status = status;
 	}
 
@@ -73,7 +80,8 @@ public class Customer implements Serializable, Cloneable {
 	 *
 	 * @return the value of birthDate
 	 */
-	public Date getBirthDate() {
+	public Date getBirthDate()
+	{
 		return birthDate;
 	}
 
@@ -83,7 +91,8 @@ public class Customer implements Serializable, Cloneable {
 	 * @param birthDate
 	 *            new value of birthDate
 	 */
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(Date birthDate)
+	{
 		this.birthDate = birthDate;
 	}
 
@@ -92,7 +101,8 @@ public class Customer implements Serializable, Cloneable {
 	 *
 	 * @return the value of lastName
 	 */
-	public String getLastName() {
+	public String getLastName()
+	{
 		return lastName;
 	}
 
@@ -102,7 +112,8 @@ public class Customer implements Serializable, Cloneable {
 	 * @param lastName
 	 *            new value of lastName
 	 */
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName)
+	{
 		this.lastName = lastName;
 	}
 
@@ -111,7 +122,8 @@ public class Customer implements Serializable, Cloneable {
 	 *
 	 * @return the value of firstName
 	 */
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return firstName;
 	}
 
@@ -121,24 +133,30 @@ public class Customer implements Serializable, Cloneable {
 	 * @param firstName
 	 *            new value of firstName
 	 */
-	public void setFirstName(String firstName) {
+	public void setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 	}
 
-	public boolean isPersisted() {
+	public boolean isPersisted()
+	{
 		return id != null;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+		{
 			return true;
 		}
-		if (this.id == null) {
+		if (this.id == null)
+		{
 			return false;
 		}
 
-		if (obj instanceof Customer && obj.getClass().equals(getClass())) {
+		if (obj instanceof Customer && obj.getClass().equals(getClass()))
+		{
 			return this.id.equals(((Customer) obj).id);
 		}
 
@@ -146,19 +164,22 @@ public class Customer implements Serializable, Cloneable {
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode()
+	{
 		int hash = 5;
 		hash = 43 * hash + (id == null ? 0 : id.hashCode());
 		return hash;
 	}
 
 	@Override
-	public Customer clone() throws CloneNotSupportedException {
+	public Customer clone() throws CloneNotSupportedException
+	{
 		return (Customer) super.clone();
 	}
 
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return firstName + " " + lastName;
 	}
 }
